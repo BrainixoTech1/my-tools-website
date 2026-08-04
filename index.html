@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panshul Tools</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+text-align:center;
+}
+header{
+padding:20px;
+background:#1e293b;
+font-size:28px;
+font-weight:bold;
+}
+.container{
+padding:30px;
+}
+.card{
+background:#1e293b;
+padding:20px;
+margin:auto;
+max-width:350px;
+border-radius:12px;
+}
+input{
+width:90%;
+padding:10px;
+margin:10px 0;
+font-size:18px;
+border-radius:8px;
+border:none;
+}
+button{
+padding:10px 20px;
+font-size:18px;
+background:#22c55e;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+h2{
+margin-top:0;
+}
+</style>
+</head>
+
+<body>
+
+<header>Panshul Free Tools</header>
+
+<div class="container">
+<div class="card">
+<h2>Percentage Calculator</h2>
+
+<input type="number" id="total" placeholder="Total Marks">
+
+<input type="number" id="obtained" placeholder="Obtained Marks">
+
+<button onclick="calculate()">Calculate</button>
+
+<h2 id="result"></h2>
+
+</div>
+</div>
+
+<script>
+function calculate(){
+let total=document.getElementById("total").value;
+let obtained=document.getElementById("obtained").value;
+
+if(total==""||obtained==""){
+document.getElementById("result").innerHTML="Enter values";
+return;
+}
+
+let per=(obtained/total)*100;
+document.getElementById("result").innerHTML="Percentage: "+per.toFixed(2)+"%";
+}
+</script>
+
+</body>
+</html>
