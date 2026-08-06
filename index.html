@@ -160,31 +160,31 @@ Made with ❤️ in India
 </footer>
 
 <script>
-function calculate(){
+function calculate() {
+  let total = document.getElementById("total").value;
+  let obtained = document.getElementById("obtained").value;
 
-let total=document.getElementById("total").value;
+  if (total == "" || obtained == "") {
+    document.getElementById("result").innerHTML = "Enter both values";
+    return;
+  }
 
-let obtained=document.getElementById("obtained").value;
-
-if(total==""||obtained==""){
-document.getElementById("result").innerHTML="Enter both values";
-return;
+  let per = (obtained / total) * 100;
+  document.getElementById("result").innerHTML = "Percentage: " + per.toFixed(2) + "%";
 }
 
-let per=(obtained/total)*100;
-
-document.getElementById("result").innerHTML="Percentage : "+per.toFixed(2)+"%";
 function solveCalc() {
   let exp = document.getElementById("calc").value;
 
+  if (exp == "") {
+    document.getElementById("calcResult").innerHTML = "Enter calculation";
+    return;
+  }
+
   try {
     document.getElementById("calcResult").innerHTML = "Answer: " + eval(exp);
-  } catch {
+  } catch (e) {
     document.getElementById("calcResult").innerHTML = "Invalid Expression";
-  }
   }
 }
 </script>
-
-</body>
-</html>
