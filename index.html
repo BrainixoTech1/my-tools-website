@@ -118,7 +118,17 @@ Explore Now
 <div class="result" id="result"></div>
 
 </div>
+<div class="card">
 
+<h2>🧮 Simple Calculator</h2>
+
+<input type="text" id="calc" placeholder="Example: 10+20*5">
+
+<button onclick="solveCalc()">Calculate</button>
+
+<div class="result" id="calcResult"></div>
+
+</div>
 <div class="card">
 
 <h2>📚 CBSE Class 12</h2>
@@ -164,7 +174,15 @@ return;
 let per=(obtained/total)*100;
 
 document.getElementById("result").innerHTML="Percentage : "+per.toFixed(2)+"%";
+function solveCalc() {
+  let exp = document.getElementById("calc").value;
 
+  try {
+    document.getElementById("calcResult").innerHTML = "Answer: " + eval(exp);
+  } catch {
+    document.getElementById("calcResult").innerHTML = "Invalid Expression";
+  }
+  }
 }
 </script>
 
